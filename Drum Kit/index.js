@@ -1,10 +1,10 @@
-var numberOfDrumButtons = document.querySelectorAll(".drum").length; // length bo długość sprawdza czyli jak jest 7 przyciskow to długość 7
+var numberOfDrumButtons = document.querySelectorAll(".drum").length; 
 
-for (var i = 0; i < numberOfDrumButtons; i++) {     // pętla for zaczyna od 0 do długości(ilości) elementów z klasą .drum
-    document.querySelectorAll(".drum")[i].addEventListener("click", function() {  // querySelectorAll zaznacza wszystkie elementy z konkretnym oznaczeniem np. klasa drum 
-    // przy querySelectorAll trzeba wskazać pozycje [i] więc w pętli iteruje się to tak jak warunki wyżej
+for (var i = 0; i < numberOfDrumButtons; i++) {    
+    document.querySelectorAll(".drum")[i].addEventListener("click", function() {  
+    
 
-var buttonInnerHTML = this.innerHTML;          //zaznacza innerHTML aby mógł zmieniać 
+var buttonInnerHTML = this.innerHTML;          
 makeSound(buttonInnerHTML);
 buttonAnimation(buttonInnerHTML)
 })
@@ -17,7 +17,7 @@ document.addEventListener("keydown", function(event) {
 })
 
 function makeSound(key) {
-    switch (key) {                         //case nawiguje element, break jest elsem
+    switch (key) {                        
         case "w":
             var crash = new Audio('./sounds/crash.mp3');
             crash.play();
@@ -53,7 +53,7 @@ function makeSound(key) {
             tom4.play();
         break;
 
-        default: console.log(buttonInnerHTML);     //default jest zabezpieczeniem gdy coś nie jest tak jak powinno u góry w switchu to wykonuje się default
+        default: console.log(buttonInnerHTML);    
     }
     
 }
@@ -68,5 +68,5 @@ function buttonAnimation(currentKey) {
 
    setTimeout(function() {
     activeButton.classList.remove("pressed");
-   }, 100) // czas po ktorym remove preseed się wykona
+   }, 100) 
 }
